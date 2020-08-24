@@ -11,6 +11,9 @@ function createLibrary(name, shelves){
 }
 
 function addBook(library, book) {
+  if(library.shelves[book.genre] === undefined){
+  library.shelves[book.genre] = [];
+}
   library.shelves[book.genre].push(book);
 //     if(book.genre === "fantasy"){
 //       library.shelves.fantasy.push(book)

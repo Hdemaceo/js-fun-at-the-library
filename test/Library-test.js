@@ -45,10 +45,18 @@ describe("library.js", function() {
         pageCount: 418,
         genre: "fantasy"
       }
+      var vampire = {
+        title: "Dracula",
+        mainCharacter: { name: "Count Dracula", age: undefined, pronouns: "he/him" },
+        pageCount: 418,
+        genre: "horror"
+      }
 
       addBook(denverLibrary, dracula);
+      addBook(denverLibrary, vampire);
 
       assert.equal(denverLibrary.shelves.fantasy[0], dracula);
+      assert.equal(denverLibrary.shelves.horror[0], vampire);
     });
 
     it("should add books to the correct shelves automatically", function() {
