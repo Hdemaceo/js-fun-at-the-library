@@ -14,14 +14,11 @@ class Librarian {
     }
   }
   findBook(book) {
-    for(var i = 0; i < this.library.length; i++){
-      if(this.library[i].shelves[book.genre].title === book){
-        return `Yes, we have ${book}`;
-      } else {
-        return `Sorry, we do not have ${book}`;
-      };
+    if(checkoutBook(this.library, book) === `You have now checked out ${book} from the ${this.library.name}` ){
+      return `Yes, we have ${book}`
+    } else {
+      return `Sorry, we do not have ${book}`
     }
-    // this.library.shelves[book.genre].includes(book) ? `Yes, we have ${book}` : `Sorry, we do not have ${book}`;
   }
 
   calculateLateFee(num){
